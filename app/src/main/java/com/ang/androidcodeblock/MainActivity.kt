@@ -2,6 +2,9 @@ package com.ang.androidcodeblock
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import com.ang.androidcodeblock.tool.AppNameIcon
 import android.view.WindowManager
 
 class MainActivity : AppCompatActivity() {
@@ -11,5 +14,16 @@ class MainActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
             WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setContentView(R.layout.activity_main)
+        init()
     }
+    private fun init() {
+        findViewById<Button>(R.id.btn_app_info).setOnClickListener(View.OnClickListener {
+            AppNameIcon.getAppName(this)
+
+
+        })
+
+    }
+
+
 }
