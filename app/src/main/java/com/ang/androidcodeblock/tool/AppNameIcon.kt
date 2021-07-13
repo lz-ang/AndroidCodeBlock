@@ -7,7 +7,8 @@ import android.util.Log
 import com.ang.androidcodeblock.MainActivity
 
 object AppNameIcon {
-    private val TAG: String = "AppNameIcon"
+    private const val TAG: String = "AppNameIcon"
+    private var listener: ((List<ApplicationInfo>) -> Unit)? = null
 
     /**
      * 获取应用程序名称
@@ -20,10 +21,19 @@ object AppNameIcon {
             for (info in applicationInfoList) {
                 val labelRes = info.packageName;
                 val name = info.loadLabel(packageManager);
-                Log.d(TAG, labelRes + name);
+                Log.d(TAG,  "包名 = $labelRes , 名字 = $name");
             }
+            listener?.let {
+                it(applicationInfoList)
+            }
+
         } catch (e: Exception) {
             e.printStackTrace();
         }
+    }
+
+
+    fun setListener(listener: (List<ApplicationInfo>) -> Unit) {
+        this.listener = listener
     }
 }
