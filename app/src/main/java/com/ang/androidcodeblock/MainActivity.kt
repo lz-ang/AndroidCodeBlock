@@ -1,6 +1,7 @@
 package com.ang.androidcodeblock
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -95,6 +96,10 @@ class MainActivity : AppCompatActivity() {
         AppNameIcon.setListener {
             Log.e(TAG, it.toString())
         }
+    }
+
+    fun inputKey(view: View) {
+        startActivity(Intent(this, KeyboardActivity::class.java))
     }
 
 }

@@ -16,4 +16,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_input_keyboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="inputKey"
+        android:layout_marginTop="20dp"
+        android:text="自定义键盘页面"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_app_info" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
